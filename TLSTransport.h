@@ -1,3 +1,10 @@
+//
+// Created by therbl on 9/21/20.
+//
+
+#ifndef TLS13_TLSTRANSPORT_H
+#define TLS13_TLSTRANSPORT_H
+
 #include <stdio.h> //standard io
 #include <string.h> //string operations
 #include <unistd.h> //mobility
@@ -9,12 +16,16 @@
 #include <sys/stat.h> //?
 #include <fcntl.h> //system calls ( e.g. open() )
 
-#define CLIENT_MODE
-#define DEBUG_MODE
-//#define SERVER_MODE
+#define MSGMAX 1024
 
-int main()
-{
-    return 0;
-}
+struct msgbuf {
+    long mtype;
+    char mtext[MSGMAX];
+};
 
+void send(struct msgbuf *buf);
+void receive(struct msgbuf *buf);
+void connect();
+
+
+#endif //TLS13_TLSTRANSPORT_H
