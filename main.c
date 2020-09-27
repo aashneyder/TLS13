@@ -8,6 +8,7 @@
 #include <time.h> //time
 #include <sys/stat.h> //?
 #include <fcntl.h> //system calls ( e.g. open() )
+#include "Base.h"
 
 #define CLIENT_MODE
 #define DEBUG_MODE
